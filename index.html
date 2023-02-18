@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Circle Animation</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #050210;
+        }
+
+        .circleRotate {
+            position: absolute;
+            height: 360px;
+            width: 360px;
+            border-radius: 50%;
+            background: linear-gradient( #fb5dad, #55fb9f, #b97aff);
+            animation: rotate 1.1s linear infinite;
+        }
+
+        .circleGlow {
+            position: absolute;
+            height: 360px;
+            width: 360px;
+            border-radius: 50%;
+            background: linear-gradient( #fb5dad, #55fb9f, #b97aff);
+            filter: blur(54px);
+            animation: rotate 1.1s linear infinite;
+        }
+        
+        .circlePulse {
+            height: 300px;
+            width: 300px;
+            position: absolute;
+            border-radius: 50%;
+            background:#050210;
+        }
+        .circlePulse::after {
+            content: "";
+            height: 325px;
+            width: 325px;
+            position:absolute;
+            border-radius: 50%;
+            background:#0a0422;
+            margin-top: -12px;
+            margin-left: -12px;
+            animation: pulse 1.1s ease infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotateZ(0deg);
+            }
+            to 
+            {
+                transform: rotateZ(360deg);
+            }
+        }
+        
+        @keyframes pulse {
+           from {
+               transform: scale(0.1);
+           }
+           to {
+               transform: scale(0.9);
+           }
+        }
+       
+    </style>
+</head>
+<body>
+
+    <div class="circleRotate"></div>
+    <div class="circleGlow"></div>
+    <div class="circlePulse"></div>
+    
+</body>
+</html>
